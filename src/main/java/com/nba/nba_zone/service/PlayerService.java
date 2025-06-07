@@ -13,11 +13,11 @@ import java.util.stream.Collectors;
 
 @Service
 @Component
-public class PlayerSevice {
+public class PlayerService {
     public final PlayerRepository playerRepository;
 
     @Autowired
-    public PlayerSevice(PlayerRepository playerRepository) {
+    public PlayerService(PlayerRepository playerRepository) {
         this.playerRepository = playerRepository;
     }
 
@@ -55,7 +55,7 @@ public class PlayerSevice {
                 .collect(Collectors.toList());
     }
 
-    public Player add(Player player) {
+    public Player addPlayer(Player player) {
         playerRepository.save(player);
         return player;
     }
